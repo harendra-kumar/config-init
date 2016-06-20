@@ -3,7 +3,7 @@
 # $1: src
 backup () {
   local src=$1
-  local dst=${2}.orig
+  local dst=${src}.orig
 
   if test -e $src
   then

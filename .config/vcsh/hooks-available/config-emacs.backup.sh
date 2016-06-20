@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # $1: src
-# $2: dst
 backup () {
   local src=$1
-  local dst=$2
+  local dst=${src}.orig
 
   if test -e $src
   then
@@ -18,4 +17,4 @@ backup () {
   fi
 }
 
-backup ~/.emacs.d ~/.emacs.d.orig
+backup ~/.emacs.d
