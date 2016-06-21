@@ -1,3 +1,3 @@
 #!/bin/sh
 
-vcsh config-home submodule update --init --recursive
+vcsh $VCSH_REPO_NAME submodule update --init --recursive
