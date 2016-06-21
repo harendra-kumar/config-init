@@ -2,4 +2,4 @@
 
 source ~/.config/config-init/backup.sh
 
-backup ~/.emacs.d
+backup ~/.gitconfig

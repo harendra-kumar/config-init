@@ -16,8 +16,3 @@ backup () {
     mv $src $dst
   fi
 }
-
-for i in .bash_profile .bashrc .gitconfig .screenrc
-do
-  backup ~/$i
-done

@@ -2,4 +2,5 @@
 
 source ~/.config/config-init/backup.sh
 
-backup ~/.emacs.d
+backup ~/.bash_profile
+backup ~/.bashrc
