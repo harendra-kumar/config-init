@@ -5,7 +5,10 @@
 # So we checkout the submodule from ~/.config/repo-name instead of form home.
 VCSH_REPO_NAME=$(basename $GIT_DIR)
 VCSH_REPO_NAME=${VCSH_REPO_NAME%.git}
-
-unset GIT_WORK_TREE
 WORKTREE=~/.config/$VCSH_REPO_NAME
-cd $WORKTREE && vcsh $VCSH_REPO_NAME --work-tree $WORKTREE submodule update --init --recursive
+
+if test -d $WORKTREE
+then
+  unset GIT_WORK_TREE
+  cd $WORKTREE && vcsh $VCSH_REPO_NAME --work-tree $WORKTREE submodule update --init --recursive
+fi
