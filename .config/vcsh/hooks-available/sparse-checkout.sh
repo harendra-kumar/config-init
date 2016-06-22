@@ -1,14 +1,13 @@
 #!/bin/sh
+
 git config core.sparseCheckout true
+
+# Hide anything not starting with . in root of repo
 if [ ! -f $GIT_DIR/info/sparse-checkout ]; then
   cat >> $GIT_DIR/info/sparse-checkout << EOF
 *
+!/*
 !.gitignore
-!/.gitmodules
 !.travis.yml
-!LICENSE*
-!README*
-!Vagrantfile
-!docs
 EOF
 fi
