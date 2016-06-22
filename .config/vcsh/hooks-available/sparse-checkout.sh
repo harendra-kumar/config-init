@@ -4,7 +4,7 @@ if [ ! -f $GIT_DIR/info/sparse-checkout ]; then
   cat >> $GIT_DIR/info/sparse-checkout << EOF
 *
 !.gitignore
-!.gitmodules
+!/.gitmodules
 !.travis.yml
 !LICENSE*
 !README*
