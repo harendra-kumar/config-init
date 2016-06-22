@@ -4,6 +4,5 @@
 # conflict. We have a copy of .gitmodules in .config/repo-name instead.
 # So we checkout the submodule from ~/.config/repo-name instead of form home.
 unset GIT_WORK_TREE
-echo "~/.config/$VCSH_REPO_NAME"
-ls -al ~/.config/$VCSH_REPO_NAME
-vcsh $VCSH_REPO_NAME --work-tree ~/.config/$VCSH_REPO_NAME submodule update --init --recursive
+WORKTREE=~/.config/$VCSH_REPO_NAME
+cd $WORKTREE && vcsh $VCSH_REPO_NAME --work-tree $WORKTREE submodule update --init --recursive
