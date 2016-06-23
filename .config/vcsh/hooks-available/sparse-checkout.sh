@@ -8,6 +8,7 @@ if [ ! -f $GIT_DIR/info/sparse-checkout ]; then
 *
 !/*
 /.*
+!/.gitmodules
 !.gitignore
 !.travis.yml
 EOF
