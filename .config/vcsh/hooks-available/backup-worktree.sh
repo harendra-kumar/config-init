@@ -11,7 +11,7 @@ backup () {
   local src=$1
   local dst=${src}.vcsh-backup
 
-  if test -e $src
+  if test -e $src -o -L $src
   then
     echo "Backing up $src to $dst ..."
     if test -e $dst
@@ -34,6 +34,6 @@ do
           | sed -e "s/'[^']*$//")
 
   test -n "$file" || break
-  test -e "$file" || die "Bug: [$file] returned by git read-tree as a conflicting file, does not exist."
+  test -e "$file" -o -L "$file" || die "Bug: [$file] returned by git read-tree as a conflicting file, does not exist."
   backup  "$file" || exit 2
 done
